@@ -1,0 +1,7 @@
+#quickhelp-ticket-button {
+	transition: background-color 0.3s ease;
+    }
+    
+#quickhelp-ticket-button:hover {
+	background-color: #218838 !important;
+    }
