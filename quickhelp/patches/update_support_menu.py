@@ -19,7 +19,7 @@ def execute():
             
     # Add a new row to the help_dropdown child table
     navbar_settings.append("help_dropdown", {
-        "item_label": "WGC Support (Create Ticket)",
+        "item_label": "KlyONIX Support (Create Ticket)",
         "item_type": "Action",
         "action": "new quickhelp.SupportTicket()"
     })

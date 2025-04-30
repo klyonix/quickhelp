@@ -7,6 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "enable_ticket",
+  "column_break_tleq",
+  "enable_site_access",
   "support_portal_section",
   "support_url",
   "save_recording",
@@ -70,12 +72,23 @@
    "fieldname": "enable_ticket",
    "fieldtype": "Check",
    "label": "Enable Ticket"
+  },
+  {
+   "fieldname": "column_break_tleq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "description": "This will allow support team to login to the site",
+   "fieldname": "enable_site_access",
+   "fieldtype": "Check",
+   "label": "Enable Site Access"
   }
  ],
  "grid_page_length": 50,
  "issingle": 1,
  "links": [],
- "modified": "2025-03-22 00:09:16.406924",
+ "modified": "2025-03-22 00:20:09.629443",
  "modified_by": "Administrator",
  "module": "QuickHelp",
  "name": "QuickHelp Settings",
