@@ -38,7 +38,7 @@ quickhelp.SupportTicket = class SupportTicket {
 			    fieldname: "ticket_module",
 			    label: __("Module"),
 			    fieldtype: "Select",
-			    options: "\nAccounts\nBuying\nSelling\nStock\nHRMS\nProject\nAsset",
+			    options: "\nAccounts\nBuying\nSelling\nStock\nHRMS\nProject\nAsset\nOther",
 			    reqd: 1,
 			    placeholder: __("Select the module related to the issue"),
 			    description: __("Choose the module where the issue is occurring.")
@@ -49,7 +49,7 @@ quickhelp.SupportTicket = class SupportTicket {
 			    fieldtype: "Text Editor",
 			    reqd: 1,
 			    placeholder: __("Provide a detailed description of the issue"),
-			    description: __("Include steps to reproduce, error messages, and any other relevant details.")
+			    description: __("<b>Include steps to reproduce, error messages, Screenshots and any other relevant details.<b>")
 			},
 			{
 			    fieldtype: "Section Break",
