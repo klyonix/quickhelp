@@ -1,7 +1,7 @@
 // Copyright (c) 2025, KlyONIX Tech Consulting Pvt Ltd and contributors
 // For license information, please see license.txt
 
-frappe.ready(function() {
+frappe.after_ajax(() => {
 	const button = document.createElement("button");
 	button.id = "quickhelp-ticket-button";
 	button.innerHTML = '<i class="fa fa-ticket"></i> Create Ticket';
