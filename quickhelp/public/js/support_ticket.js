@@ -32,29 +32,61 @@ quickhelp.SupportTicket = class {
     init_config() {
         this.fields = [
             {
+                label: "Current URL",
+                fieldname: "current_url",
+                fieldtype: "Data",
+                default: window.location.href,
+                read_only:1,
+		        description: __("Current sessions url")
+            },
+            {
                 label: "Ticket Title",
                 fieldname: "ticket_title",
                 fieldtype: "Data",
                 reqd: 1,
-		placeholder: __("Enter a brief description of the issue"),
-		description: __("Summarize the issue in a few words.")
+		        placeholder: __("Enter a brief description of the issue"),
+		        description: __("Summarize the issue in a few words.")
             },
             {
                 label: "Module",
                 fieldname: "ticket_module",
                 fieldtype: "Select",
-                options: ["Accounts", "Buying", "Selling", "HR", "Stock", "Projects", "CRM", "Others"],
+                options: ["Accounts", "Buying", "Selling", "HR", "Stock", "Projects", "CRM","Manufacturing", "Other"],
                 reqd: 1,
-		placeholder: __("Select the module related to the issue"),
-		description: __("Choose the module where the issue is occurring.")
+		        placeholder: __("Select the module related to the issue"),
+		        description: __("Choose the module where the issue is occurring.")
+            },
+            {
+                label: "Contact Person",
+                fieldname: "contact_person",
+                fieldtype: "Link",
+                options: "User",
+                default: frappe.session.user,
+                reqd: 1,
+		        description: __("Session User Name")
+            },
+            {
+                label: "Contact Number",
+                fieldname: "contact_number",
+                fieldtype: "Phone",
+                options: "Phone",
+                reqd: 1,
+		        description: __("Contact Number")
+            },
+            {
+                label: "Reference Document Number",
+                fieldname: "ref_doc_number",
+                fieldtype: "Data",
+                reqd: 1,
+		        description: __("Document's reference number")
             },
             {
                 label: "Description",
                 fieldname: "ticket_description",
                 fieldtype: "Text Editor",
                 reqd: 1,
-		placeholder: __("Provide a detailed description of the issue"),
-		description: __("<b>Include steps to reproduce, error messages, Screenshots and any other relevant details.<b>")
+		        placeholder: __("Provide a detailed description of the issue"),
+		        description: __("<b>Include steps to reproduce, error messages, Screenshots and any other relevant details.<b>")
             }
         ];
     }
