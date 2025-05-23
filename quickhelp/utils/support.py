@@ -19,7 +19,8 @@ def create_ticket(title: str, raised_by: str, ticket_module: str, description: s
             "description": description,
             "raised_by": raised_by,
             "subject": title,
-            "custom_module": ticket_module,
+            "kly_module": ticket_module,
+            "customer":settings.project_id,
             # **generate_ticket_details(settings),
         },
     }
