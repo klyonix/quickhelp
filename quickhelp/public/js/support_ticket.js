@@ -114,7 +114,9 @@ quickhelp.SupportTicket = class {
                 "title": values.ticket_title,
                 "raised_by": frappe.session.user,
                 "ticket_module": values.ticket_module,
-                "description": values.ticket_description
+                "description": values.ticket_description,
+                "contact_number": values.contact_number,
+                "ref_doc_number": values.ref_doc_number,
             },
             freeze: true,
             freeze_message: __("Creating ticket..."),
