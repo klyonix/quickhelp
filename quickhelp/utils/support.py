@@ -8,7 +8,8 @@ from quickhelp.utils.requests import make_request
 from typing import Optional
 
 @frappe.whitelist()
-def create_ticket(title: str, raised_by: str, ticket_module: str, description: str) -> str:
+def create_ticket(title: str, raised_by: str, ticket_module: str, description: str, contact_person: str, contact_number: str, ref_doc_number: str, current_url: str ) -> str:
+    
     settings = frappe.get_cached_doc("QuickHelp Settings")
     headers = {
         "Authorization": f"token {settings.get_password('support_api_token')}",
@@ -21,10 +22,14 @@ def create_ticket(title: str, raised_by: str, ticket_module: str, description: s
             "subject": title,
             "kly_module": ticket_module,
             "customer":settings.project_id,
+            "kly_contact_person": contact_person,
+            "kly_contact_no": contact_number,
+            "kly_reference_doc": ref_doc_number,
+            "kly_url": current_url,
             # **generate_ticket_details(settings),
         },
     }
-
+    
     response = make_request(
         url=f"{settings.support_url}/api/method/helpdesk.helpdesk.doctype.hd_ticket.api.new",
         headers=headers,
@@ -40,3 +45,4 @@ def create_ticket(title: str, raised_by: str, ticket_module: str, description: s
         frappe.throw(_("Ticket was not created. Please contact admin."))
 
     return ticket_name
+
